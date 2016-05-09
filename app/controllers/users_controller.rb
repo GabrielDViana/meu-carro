@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  helper_method :confirm_payment
   def index
     @users = User.all
   end
@@ -49,6 +50,30 @@ class UsersController < ApplicationController
     else
       flash[:error] = "Desculpe, o usuário não existe"
       redirect_to login_url
+    end
+  end
+
+  def confirm_payment
+    @user = User.find_by_token(params[:token])
+    @payment = PagSeguro::PaymentRequest.new
+
+    # Você também pode fazer o request de pagamento usando credenciais
+    # diferentes, como no exemplo abaixo
+
+    @payment.reference = @user.token
+
+    @payment.items << {
+      id: @user.id,
+      description: "Pagamento para registro no MeuCarro",
+      amount: 19.90
+    }
+
+    response = @payment.register
+
+    if response.errors.any?
+      raise response.errors.join("\n")
+    else
+      redirect_to response.url
     end
   end
 
