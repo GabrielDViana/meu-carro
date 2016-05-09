@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Usuarios</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Complete name</th>
+      <th>E-mail</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.complete_name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+  <h3><%= @user.complete_name %></h3>
+  <table class="table">
+    <tr>
+      <td><b>Usuário:</b> <%= @user.complete_name %></td>
+    </tr>
+    <tr>
+      <td><b>E-mail:</b> <%= @user.email %></td>
+    </tr>
+    <tr>
+      <td><b>Membro desde:</b> <%= @user.created_at.strftime(" %d/%m/%Y ") %></td>
+    </tr>
+  </table>
+</div>

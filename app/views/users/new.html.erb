@@ -1,0 +1,19 @@
+<%= render 'users/form' %>
+
+<div class="row">
+  <div>
+    <h2>Registrar</h2>
+  </div>
+
+  <%= form_for(@user) do |f| %>
+    <div class="buttonHolder">
+      <%= f.text_field :complete_name, :placeholder =>
+          "Nome Completo" %>
+      <%= f.text_field :email, :placeholder => "E-mail" %>
+      <%= f.password_field :password, :placeholder => "Senha" %>
+      <%= f.password_field :password_confirmation,
+          :placeholder => "Confirmação de senha" %>
+      <%= f.submit "Entrar"%>
+    </div>
+  <% end %>
+</div>

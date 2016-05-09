@@ -1,0 +1,14 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div style="color:red;" id="error_explanation">
+      <h2>Can't sign up,
+        <%= pluralize(@user.errors.count, "error", "errors") %> found
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li class ="err-list"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
