@@ -1,0 +1,34 @@
+
+<%= render "layouts/header"%>
+
+  <%= render :template => "meu_carro/home"%>
+
+  <section id="info">
+    <div class="container">
+      <%= render :template => "meu_carro/info"%>
+    </div>
+  </section>
+
+  <section id="about-us" class="parallax">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <h2>Quem somos</h2>
+            <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="atendimento">
+    <!-- <div id="google-map" class="wow fadeIn" data-latitude="-15.7942287" data-longitude="-47.8821658" data-wow-duration="1000ms" data-wow-delay="400ms"></div> -->
+    <div id="contact-us" class="parallax">
+      <div class="container">
+        <%= render :template => "meu_carro/atendimento"%>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

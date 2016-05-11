@@ -65,7 +65,7 @@ class UsersController < ApplicationController
     @payment.items << {
       id: @user.id,
       description: "Pagamento para registro no MeuCarro",
-      amount: 19.90
+      amount: 89.90
     }
 
     response = @payment.register
