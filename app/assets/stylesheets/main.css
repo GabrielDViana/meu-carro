@@ -248,20 +248,28 @@ section {
   right:30px
 }
 
-#home-slider .fa-angle-down {
+#home-slider .fa-anchor {
   position: absolute;
-  left: 50%;
-  bottom: 50px;
-  color: #fff;
+  left: 49%;
+  bottom: -13px;
+  color: #ef473a;
   display: inline-block;
-  width: 24px;
+  border-radius: 50%;
+  border:5px solid #505050;
+  background-color: #fff;
   margin-left: -12px;
+  height: 51px;
+  width: 51px;
+  line-height: 32px;
+  z-index: 20;
   font-size: 24px;
-  line-height: 24px;
-  z-index: 999;
-  -webkit-animation: bounce 3000ms infinite;
-  animation: bounce 3000ms infinite;
+  text-align: center;
 }
+/*#home-slider .fa-anchor:hover {
+  color: #fff;
+  background-color:#ef473a;
+	border-color: #ef473a;
+}*/
 
 .navbar-right li a {
   color: #fff;
@@ -865,7 +873,7 @@ section {
 **************************/
 
 #atendimento {
-  padding-top: 45px;
+  padding-top: 10px;
   padding-bottom: 0;
 }
 
@@ -874,12 +882,16 @@ section {
 }
 
 #contact-us {
-  background-image:url('porcheback.jpg');
+  background-color: #F8F8F8;
   padding-bottom: 90px;
 }
 
 #contact-us .heading {
   padding-top: 95px;
+}
+
+#contact-us h1, h3, span{
+  color: #505050;
 }
 
 .form-control {

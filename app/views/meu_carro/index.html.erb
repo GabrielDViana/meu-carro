@@ -1,5 +1,5 @@
 
-<%= render "layouts/header"%>
+<!-- <%= render "layouts/header"%> -->
 
   <%= render :template => "meu_carro/home"%>
 
@@ -8,6 +8,31 @@
       <%= render :template => "meu_carro/info"%>
     </div>
   </section>
+  <div class="border2"></div>
+
+  <section id="info">
+    <div class="container">
+      <div class="row col-sm-10 col-sm-offset-1">
+        <div class="col-sm-6 imac-image">
+          <div class="wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="what-is wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <h2>O QUE É?</h2>
+            <div class="paragraph">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            </div>
+            <div class="paragraph">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <a data-scroll class="btn btn-assign animated fadeInUpBig paragraph" href="#services">Assine agora mesmo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="border2"></div>
 
   <section id="about-us" class="parallax">
     <div class="container">
@@ -15,7 +40,9 @@
         <div class="col-sm-6">
           <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
             <h2>Quem somos</h2>
-            <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem. </p>
+            <p>A newcap é uma plataforma online que conecta pessoas que queiram aprender com pessoas que queiram ensinar. Criada em fevereiro de 2016 por quatro estudantes brasileiros, a newcap tem como objetivo facilitar a troca de conhecimento entre pessoas por todo o mundo. </p>
+            <p>Todos podem aprender algo com o outro. Não importa se você é um ganhador do prêmio Nobel ou um estudante de graduação. Com a newcap, qualquer pessoa que queira expor sobre determinado assunto pode ensinar àqueles que estiverem interessados em aprender. </p>
+            <p>Toda a intermediação é feita online em nosso site, mas os cursos são presenciais. A newcap acredita que a melhor forma de assimilar conhecimento é com interação, pois podem ser trabalhadas diferentes formas de inteligência, além de facilitar o networking. A plataforma permite também o financiamento coletivo de projetos para pessoas que não tenham condições de custear, garantindo, assim, que todos tenham acesso ao conhecimento.</p>
           </div>
         </div>
       </div>
@@ -24,7 +51,7 @@
 
   <section id="atendimento">
     <!-- <div id="google-map" class="wow fadeIn" data-latitude="-15.7942287" data-longitude="-47.8821658" data-wow-duration="1000ms" data-wow-delay="400ms"></div> -->
-    <div id="contact-us" class="parallax">
+    <div id="contact-us">
       <div class="container">
         <%= render :template => "meu_carro/atendimento"%>
       </div>

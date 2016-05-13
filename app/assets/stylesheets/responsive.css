@@ -3,11 +3,16 @@
   .main-content {
     min-height: 400px;
   }
+  .imac-image{
+    min-height: 500px;
+  }
 }
 
 /* md */
 @media (min-width: 992px) and (max-width: 1199px) {
-
+  .imac-image{
+    min-height: 400px;
+  }
 }
 
 /* sm */
@@ -32,6 +37,9 @@
 	.btn-signup {
 		padding: 10px 20px;
 	}
+  .imac-image{
+    min-height: 500px;
+  }
 }
 
 /* xs */
@@ -227,4 +235,7 @@
 		width:100%;
 		float: none;
 	}
+  .imac-image{
+    min-height: 400px;
+  }
 }

@@ -2,7 +2,90 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .icons{
-  font-size:100px;
+  font-size:50px;
   color:black;
   text-align: center;
+}
+
+.box{
+  width: 120%;
+  margin-left: -10%;
+}
+.border1{
+  margin-left: 40%;
+  width: 20%;
+  border-bottom:1px solid #505050;
+  margin-bottom: 10px;
+}
+.border2{
+  border-bottom:1px solid #505050;
+  margin-bottom: 15px;
+}
+.info a{
+  font-size: 14px;
+  font-weight: 590;
+  position: relative;
+  height: 35px;
+  width: auto;
+  margin:auto;
+  display:block;
+}
+.info p{
+  font-size: 11px;
+}
+.imac-image{
+  background-image: url('/assets/imac.png');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 500px;
+}
+.imac-inside{
+  margin: 10%;
+}
+.what-is h2{
+  padding-left: 25px;
+  border-left: 6px solid #ef473a;
+  margin-bottom: 25px;
+}
+.paragraph{
+  margin-top: 40px;
+}
+.paragraph p{
+  font-size: 12px;
+}
+.btn-assign {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding:14px 40px;
+  border: 1px solid #ef473a;
+  border-radius: 4px;
+  background-color:#ef473a;
+}
+
+.big-triangle:before {
+    right: 50%;
+    border-right: 1000px solid transparent;
+    border-left: 1000px solid;
+}
+
+.big-triangle:after {
+    left: 50%;
+    border-left: 1000px solid transparent;
+    border-right: 1000px solid;
+}
+
+.big-triangle:after, .big-triangle:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    z-index: 100;
+    border-bottom: 160px solid white;
+    -moz-transform: rotate(0.000002deg);
+    -webkit-transform: rotate(0.000002deg);
+    -o-transform: rotate(0.000002deg);
+    -ms-transform: rotate(0.000002deg);
+    transform: rotate(0.000002deg);
 }
