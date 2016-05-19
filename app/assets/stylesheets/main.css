@@ -600,7 +600,6 @@ section {
 }
 
 .social-icons {
-  margin-top:30px;
   text-align: center;
 }
 
@@ -960,6 +959,22 @@ section {
   padding-top: 10px;
   padding-bottom: 0;
 }
+#atendimento h4{
+  color: #ef473a;
+  margin-bottom: 5%;
+}
+#atendimento .shadow{
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  height: 450px;
+  padding: 5% 10% 0 5%;
+}
+#atendimento .dist{
+  padding-top: 5%;
+}
+#atendimento input{
+  height: 40px;
+}
 
 #google-map {
   height: 350px;
@@ -987,12 +1002,12 @@ section {
 }
 
 textarea.form-control {
-  min-height: 180px;
+  min-height: 120px;
   resize:none;
 }
 
 .form-group {
-  margin-bottom: 30px;
+  margin-top: 10%;
 }
 
 .contact-info {
@@ -1034,7 +1049,7 @@ ul.address {
 }
 
 #footer .footer-bottom {
-  background-color: #fff;
+  background-color: #202020;
   padding: 20px 0 10px;
 }
 
