@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
+<script type="text/javascript">
+PagSeguroDirectPayment.setSessionId('<%= @pagseguro_session_id %>');
+var hash = PagSeguroDirectPayment.getSenderHash();
 
+</script>
   <h3><%= @user.complete_name %></h3>
   <table class="table">
     <tr>
@@ -10,7 +14,9 @@
     </tr>
     <tr>
       <td><b>Membro desde:</b> <%= @user.created_at.strftime(" %d/%m/%Y ") %></td>
+
     </tr>
-    <tr><%= confirm_payment %></tr>
+    <button onclick="console.log(PagSeguroDirectPayment.getSenderHash());"></button>
+    <tr><%= button_to "Some Button", { :controller => "users", :action => "confirm_payment"} %></tr>
   </table>
 </div>

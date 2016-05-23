@@ -6,8 +6,17 @@ Rails.application.routes.draw do
       get :confirm_email
     end
   end
+  resources :users do
+    get :assign
+  end
+
+  resources :payment_requests
 
   root 'meu_carro#index'
+  # post 'users/:token/confirm_payment'  => 'users#confirm_payment'
+  # get 'assign'  => 'users#assign'
+  # post 'assign'  => 'users#assign'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

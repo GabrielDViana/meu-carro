@@ -1,0 +1,29 @@
+<div class="row">
+<script type="text/javascript">
+  PagSeguroDirectPayment.setSessionId('<%= @pagseguro_session_id %>');
+  var hash = PagSeguroDirectPayment.getSenderHash();
+</script><div class="buttonHolder">
+<button onclick="console.log(PagSeguroDirectPayment.getSenderHash());">TEST</button>
+<%= form_for(@params) do |f| %>
+
+    <%= f.text_field :area_code, :placeholder => "DDD" %>
+    <%= f.text_field :phone, :placeholder => "Telefone" %>
+    <%= f.text_field :document, :placeholder => "CPF" %>
+    <%= f.text_field :email, :placeholder => "E-mail do PagSeguro" %>
+    <%= f.text_field :name, :placeholder => "Nome da conta PagSeguro" %>
+    <%= f.text_field :hash_id, :placeholder =>"id" %>
+    <%= f.text_field :postal_code, :placeholder => "CEP" %>
+    <%= f.text_field :street, :placeholder => "rua" %>
+    <%= f.text_field :number, :placeholder => "numero" %>
+    <%= f.text_field :complement, :placeholder => "complemento" %>
+    <%= f.text_field :district, :placeholder => "Bairro" %>
+    <%= f.text_field :city, :placeholder => "Cidade" %>
+    <%= f.text_field :state, :placeholder => "Sigla do Estado" %>
+    <%= f.text_field :token, :placeholder => "codigo do cartao" %>
+    <%= f.text_field :name_in_card, :placeholder => "nome do cartao" %>
+    <%= f.date_field :birthdate, :placeholder => "ca" %>
+    <%= f.text_field :document_card, :placeholder => "cpf do cartao" %>
+  </div>
+    <%= f.submit "Gerar pagamento"%>
+  </div>
+<% end %>
