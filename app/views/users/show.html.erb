@@ -17,6 +17,6 @@ var hash = PagSeguroDirectPayment.getSenderHash();
 
     </tr>
     <button onclick="console.log(PagSeguroDirectPayment.getSenderHash());"></button>
-    <tr><%= button_to "Some Button", { :controller => "users", :action => "confirm_payment"} %></tr>
+    <%= link_to "+ Service", user_assign_path(@user) %>
   </table>
 </div>

@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   resources :payment_requests
 
+  get 'users/:token/confirm_payment' => 'users#confirm_payment'
+  post 'users/:token/confirm_payment' => 'users#confirm_payment'
+  post 'users/:token/assign' => 'users#assign'
+  
   root 'meu_carro#index'
   # post 'users/:token/confirm_payment'  => 'users#confirm_payment'
   # get 'assign'  => 'users#assign'

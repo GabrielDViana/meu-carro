@@ -11,29 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523195105) do
-
-  create_table "payment_requests", force: :cascade do |t|
-    t.integer  "area_code"
-    t.integer  "phone"
-    t.integer  "document"
-    t.string   "email"
-    t.string   "name"
-    t.string   "hash_id"
-    t.integer  "postal_code"
-    t.string   "street"
-    t.integer  "number"
-    t.string   "complement"
-    t.string   "district"
-    t.string   "city"
-    t.string   "state"
-    t.string   "token"
-    t.string   "name_in_card"
-    t.date     "birthdate"
-    t.integer  "document_card"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
+ActiveRecord::Schema.define(version: 20160613175339) do
 
   create_table "users", force: :cascade do |t|
     t.string   "complete_name"
@@ -44,6 +22,22 @@ ActiveRecord::Schema.define(version: 20160523195105) do
     t.string   "confirm_token"
     t.string   "token"
     t.boolean  "email_confirmed"
+    t.string   "area_code"
+    t.integer  "phone"
+    t.integer  "document"
+    t.string   "name"
+    t.string   "hash_id"
+    t.string   "postal_code"
+    t.string   "street"
+    t.integer  "number"
+    t.string   "complement"
+    t.string   "district"
+    t.string   "city"
+    t.string   "state"
+    t.string   "cc_token"
+    t.string   "name_in_card"
+    t.date     "birthdate"
+    t.integer  "document_card"
   end
 
 end

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :assign]
   helper_method :confirm_payment
   def index
     @users = User.all
@@ -54,34 +55,33 @@ class UsersController < ApplicationController
   end
 
   def assign
-    @user = User.find_by_token(params[:token])
-    @params = PaymentRequest.new
+    # @user = User.find_by_token(params[:token])
     pagseguro_session = PagSeguro::Session.new
     @pagseguro_session_id = pagseguro_session.create.id
     payment = PagSeguro::Payment.new(notification_url: 'http://localhost:3000/', payment_method: 'boleto', reference: '1')
     items = [PagSeguro::Item.new(id: 1, description: 'Assinatura', amount: 89.90, quantity: 1)]
     payment.items = items
     @sender = PagSeguro::Sender.new
-    @sender.phone = PagSeguro::Phone.new(@params.area_code, @params.phone)
-    @sender.document = PagSeguro::Document.new(@params.document)
+    @sender.phone = PagSeguro::Phone.new(@user.area_code, @user.phone)
+    @sender.document = PagSeguro::Document.new(@user.document)
     payment.sender = @sender
     @address = PagSeguro::Address.new
     shipping = PagSeguro::Shipping.new
     shipping.address = @address
     payment.shipping = shipping
-    @credit_card = PagSeguro::CreditCard.new(@params.token)
+    @credit_card = PagSeguro::CreditCard.new(@user.token)
     @credit_card.installment = PagSeguro::Installment.new(1, 1)
-    @credit_card.holder = PagSeguro::Holder.new(@params.name, @params.birthdate)
-    @credit_card.holder.document = PagSeguro::Document.new(@params.document_card)
+    @credit_card.holder = PagSeguro::Holder.new(@user.name, @user.birthdate)
+    @credit_card.holder.document = PagSeguro::Document.new(@user.document_card)
     @credit_card.holder.phone = @sender.phone
     @credit_card.billing_address = @address
     payment.credit_card = @credit_card
-    # @transaction = payment.transaction
-    # if @transaction.errors.any?
-    #   raise @transaction.errors.join("\n")
-    # else
-    #   @transaction.payment_link
-    # end
+    @transaction = payment.transaction
+    if @transaction.errors.any?
+      raise @transaction.errors.join("\n")
+    else
+      @transaction.payment_link
+    end
   end
 
   def confirm_payment
@@ -131,5 +131,12 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:complete_name, :email,
           :password, :password_confirmation)
+    end
+
+    def payment_request_params
+      params.require(:payment_request).permit(:area_code, :phone,
+          :document, :email, :name, :hash_id , :postal_code, :street, :number,
+          :complement, :district, :city, :state, :token, :name_in_card,
+          :birthdate, :document_card)
     end
 end
