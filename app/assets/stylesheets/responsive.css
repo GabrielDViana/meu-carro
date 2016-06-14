@@ -6,6 +6,29 @@
   .imac-image{
     min-height: 500px;
   }
+  .big-triangle:before {
+      right: 50%;
+      border-right: 1500px solid transparent;
+      border-left: 1500px solid;
+  }
+
+  .big-triangle:after {
+      left: 50%;
+      border-left: 1500px solid transparent;
+      border-right: 1500px solid;
+  }
+
+  #home-slider .fa-anchor {
+    left: 49.4%;
+    bottom: -15px;
+  }
+
+  #about-us .left-half {
+    height: 1000px;
+  }
+  #about-us .right-half {
+    height: 1000px;
+  }
 }
 
 /* md */

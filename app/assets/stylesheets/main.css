@@ -341,7 +341,7 @@ section {
 
 #about-us .left-half {
   background-color: #202020;
-  min-height: 600px;
+  height: 600px;
   flex: 1;
   padding: 1rem;
 }
@@ -349,7 +349,7 @@ section {
 #about-us .right-half {
   background-image: url('corvetteback.JPG');
   background-size: cover;
-  min-height: 600px;
+  height: 600px;
   flex: 1;
   padding: 1rem;
   z-index: -1;
@@ -390,9 +390,7 @@ section {
 #about-us .fa-users {
   position: absolute;
   color: #202020;
-  margin-top: 24%;
   margin-left: 13%;
-  display: inline-block;
   border-radius: 50%;
   box-shadow: 0px 0px 0px 5px rgba(160,160,160,0.5);
   background-color: #fff;
@@ -406,9 +404,7 @@ section {
 #about-us .fa-coffee {
   position: absolute;
   color: #202020;
-  margin-top: 55%;
   margin-left: 13%;
-  display: inline-block;
   border-radius: 50%;
   box-shadow: 0px 0px 0px 5px rgba(160,160,160,0.5);
   background-color: #fff;
@@ -422,9 +418,7 @@ section {
 #about-us .fa-gift {
   position: absolute;
   color: #202020;
-  margin-top: 86%;
   margin-left: 13%;
-  display: inline-block;
   border-radius: 50%;
   box-shadow: 0px 0px 0px 5px rgba(160,160,160,0.5);
   background-color: #fff;
