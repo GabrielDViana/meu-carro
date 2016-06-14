@@ -1,0 +1,113 @@
+/* line 4, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.icons {
+  font-size: 50px;
+  color: black;
+  text-align: center;
+}
+
+/* line 10, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.box {
+  width: 120%;
+  margin-left: -10%;
+}
+
+/* line 14, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.border1 {
+  margin-left: 40%;
+  width: 20%;
+  border-bottom: 1px solid #505050;
+  margin-bottom: 10px;
+}
+
+/* line 20, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.border2 {
+  border-bottom: 1px solid #505050;
+  margin-bottom: 15px;
+}
+
+/* line 24, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.info a {
+  font-size: 14px;
+  font-weight: 590;
+  position: relative;
+  height: 35px;
+  width: auto;
+  margin: auto;
+  display: block;
+}
+
+/* line 33, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.info p {
+  font-size: 11px;
+}
+
+/* line 36, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.imac-image {
+  background-image: url("/assets/imac.png");
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 500px;
+}
+
+/* line 43, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.imac-inside {
+  margin: 10%;
+}
+
+/* line 46, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.what-is h2 {
+  padding-left: 25px;
+  border-left: 6px solid #ef473a;
+  margin-bottom: 25px;
+}
+
+/* line 51, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.paragraph {
+  margin-top: 40px;
+}
+
+/* line 54, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.paragraph p {
+  font-size: 12px;
+}
+
+/* line 57, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.btn-assign {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 40px;
+  border: 1px solid #ef473a;
+  border-radius: 4px;
+  background-color: #ef473a;
+}
+
+/* line 67, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.big-triangle:before {
+  right: 50%;
+  border-right: 1000px solid transparent;
+  border-left: 1000px solid;
+}
+
+/* line 73, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.big-triangle:after {
+  left: 50%;
+  border-left: 1000px solid transparent;
+  border-right: 1000px solid;
+}
+
+/* line 79, /home/gabriel/meu-carro/app/assets/stylesheets/meu_carro.scss */
+.big-triangle:after, .big-triangle:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  z-index: 100;
+  border-bottom: 160px solid white;
+  -moz-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
