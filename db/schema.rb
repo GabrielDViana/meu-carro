@@ -11,7 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613175339) do
+ActiveRecord::Schema.define(version: 20160624194957) do
+
+  create_table "card_transactions", force: :cascade do |t|
+    t.integer  "card_id"
+    t.string   "action"
+    t.integer  "amount"
+    t.boolean  "success"
+    t.string   "authorization"
+    t.string   "message"
+    t.text     "params"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "card_transactions", ["card_id"], name: "index_card_transactions_on_card_id"
+
+  create_table "cards", force: :cascade do |t|
+    t.integer  "registration_id"
+    t.string   "ip_address"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "card_type"
+    t.date     "card_expires_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.boolean  "recurring"
+    t.string   "period"
+    t.integer  "cycles"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.integer  "course_id"
+    t.string   "full_name"
+    t.string   "company"
+    t.string   "email"
+    t.string   "telephone"
+    t.text     "notification_params"
+    t.string   "status"
+    t.string   "transaction_id"
+    t.datetime "purchased_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "registrations", ["course_id"], name: "index_registrations_on_course_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "complete_name"
@@ -22,22 +73,6 @@ ActiveRecord::Schema.define(version: 20160613175339) do
     t.string   "confirm_token"
     t.string   "token"
     t.boolean  "email_confirmed"
-    t.string   "area_code"
-    t.integer  "phone"
-    t.integer  "document"
-    t.string   "name"
-    t.string   "hash_id"
-    t.string   "postal_code"
-    t.string   "street"
-    t.integer  "number"
-    t.string   "complement"
-    t.string   "district"
-    t.string   "city"
-    t.string   "state"
-    t.string   "cc_token"
-    t.string   "name_in_card"
-    t.date     "birthdate"
-    t.integer  "document_card"
   end
 
 end

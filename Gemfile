@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-# PagSeguro
-gem "pagseguro-transparente", "~> 1.0.1"
 # Use protected_attributes
 gem 'protected_attributes'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
