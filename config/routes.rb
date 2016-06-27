@@ -6,16 +6,14 @@ Rails.application.routes.draw do
       get :confirm_email
     end
   end
-  resources :users do
-    get :assign
-  end
 
-  resources :payment_requests
+  resources :registrations
 
-  get 'users/:token/confirm_payment' => 'users#confirm_payment'
-  post 'users/:token/confirm_payment' => 'users#confirm_payment'
-  post 'users/:token/assign' => 'users#assign'
-  
+  post "/hook" => "registrations#hook"
+  post "/registrations/:id" => "registrations#show"
+
+  resources :courses
+
   root 'meu_carro#index'
   # post 'users/:token/confirm_payment'  => 'users#confirm_payment'
   # get 'assign'  => 'users#assign'

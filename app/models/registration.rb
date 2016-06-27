@@ -1,6 +1,7 @@
 class Registration < ActiveRecord::Base
   belongs_to :course
   has_one :card
+  belongs_to :user
   accepts_nested_attributes_for :card
 
   validates :full_name, :company, :email, :telephone, presence: true
