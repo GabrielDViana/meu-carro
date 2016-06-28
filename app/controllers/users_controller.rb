@@ -1,12 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :assign]
   helper_method :confirm_payment
+  before_filter :get_courses
+
   def index
     @users = User.all
   end
 
   def show
     @user = User.find_by_token(params[:token])
+  end
+
+  def get_courses
+    @courses = Course.all
   end
 
   def new

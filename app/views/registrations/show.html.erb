@@ -1,0 +1,75 @@
+<section id="course-content">
+  <section id="ruby">
+    <section class="detailed-syllabus">
+      <div class="wrapper-inside">
+        <h3 class="title">Course invoice</h3>
+      </div>
+      <div class="columns clearfix">
+        <div class="left" style="padding-left:100px;">
+          <% if notice %>
+            <p id="notice" style="background-color: lightgreen;padding: 5px;">
+              <%= notice %>
+            </p>
+          <% end %>
+          <% if alert %>
+            <p id="alert" style="background-color: lightpink;padding: 5px;">
+              <%= alert %>
+            </p>
+          <% end %>
+          <p>
+            <strong>Course:</strong>
+            <%= @registration.course.name %>
+          </p>
+          <p>
+            <strong>Price:</strong>
+            <%= @registration.course.price %>
+          </p>
+          <p>
+            <strong>Full name:</strong>
+            <%= @registration.full_name %>
+          </p>
+          <p>
+            <strong>Company:</strong>
+            <%= @registration.company %>
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <%= @registration.email %>
+          </p>
+          <p>
+            <strong>Telephone:</strong>
+            <%= @registration.telephone %>
+          </p>
+          <p>
+            <strong>Payment date:</strong>
+            <%= @registration.purchased_at %>
+          </p>
+          <p>
+            <strong>Payment method:</strong>
+            <%= @registration.payment_method.capitalize %>
+          </p>
+          <% if @registration.payment_method == "paypal" %>
+            <p>
+              <strong>Payment status:</strong>
+              <%= @registration.status %>
+            </p>
+            <p>
+              <strong>Paypal Transaction Identifier:</strong>
+              <%= @registration.transaction_id %>
+            </p>
+          <% else %>
+            <p>
+              <% if @registration.course.recurring %>
+                <strong>Profile Idetntifier:</strong>
+                <%= @registration.card.card_transaction.params["profile_id"] %>
+              <% else %>
+                <strong>Transaction Identifier:</strong>
+                <%= @registration.card.card_transaction.params["transaction_id"] %>
+              <% end %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  </section>
+</section>

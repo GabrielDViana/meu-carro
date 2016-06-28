@@ -1,0 +1,16 @@
+<div class="course-nav-wrapper">
+<div class="wrapper-inside clearfix">
+  <ul class="course-nav-list"></ul>
+  <% @courses.each do |course| %>
+  <li class="<%= 'active' if params['course_id'].to_i== course.id %>">
+    <%= link_to new_registration_path(course_id: course.id), class: "ruby" do %>
+    <div class="course-name">
+      <%= course.name %>
+    </div>
+    <button class="btn" style="color: white;background: rgb(242, 118, 73);">Register ($#{course.price} #{("per " + course.period) if course.recurring})</button>
+    <div class="course-arrow"></div>
+    <% end %>
+  </li>
+  <% end %>
+</div>
+</div>
