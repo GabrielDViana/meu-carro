@@ -3,11 +3,14 @@
   <ul class="course-nav-list"></ul>
   <% @courses.each do |course| %>
   <li class="<%= 'active' if params['course_id'].to_i== course.id %>">
-    <%= link_to new_registration_path(course_id: course.id), class: "ruby" do %>
+    <%= link_to new_user_registration_path(course_id: course.id, user_token:@user.token), class: "ruby" do %>
     <div class="course-name">
       <%= course.name %>
     </div>
-    <button class="btn" style="color: white;background: rgb(242, 118, 73);">Register ($#{course.price} #{("per " + course.period) if course.recurring})</button>
+    <button class="btn" style="color: white;background: rgb(242, 118, 73);">
+      Registrar <%= course.price %>
+      <% if course.recurring %> <%= "Valido por " + course.cycles.to_s+ " meses" %> <% end %>
+    </button>
     <div class="course-arrow"></div>
     <% end %>
   </li>

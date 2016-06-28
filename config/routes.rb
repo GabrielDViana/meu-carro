@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, param: :token do
+    resources :registrations
+  end
+  
   resources :registrations
 
   post "/hook" => "registrations#hook"

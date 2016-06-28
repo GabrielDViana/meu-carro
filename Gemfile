@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'activemerchant'
 # Use protected_attributes
 gem 'protected_attributes'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

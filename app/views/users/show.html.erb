@@ -16,20 +16,13 @@ var hash = PagSeguroDirectPayment.getSenderHash();
       <td><b>Membro desde:</b> <%= @user.created_at.strftime(" %d/%m/%Y ") %></td>
     </tr>
   </table>
-  <div class="course-nav-wrapper">
-  <div class="wrapper-inside clearfix">
-    <ul class="course-nav-list"></ul>
-    <% @courses.each do |course| %>
-    <li class="<%= 'active' if params['course_id'].to_i== course.id %>">
-      <%= link_to new_registration_path(course_id: course.id), class: "ruby" do %>
-      <div class="course-name">
-        <%= course.name %>
-      </div>
-      <button class="btn" style="color: white;background: rgb(242, 118, 73);">Register ($#{course.price} #{("per " + course.period) if course.recurring})</button>
-      <div class="course-arrow"></div>
-      <% end %>
-    </li>
-    <% end %>
+  <body class="curriculum-page">
+  <div class="wrapper">
+    <section class="content clearfix">
+      <section class="curriculum">
+        <%= render partial: "courses/index" %>
+      </section>
+    </section>
   </div>
-</div>
+</body>
 </div>

@@ -52,6 +52,15 @@ Rails.application.configure do
     :authentication => :plain,
     :enable_starttls_auto => true
   }
+  
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test  # :production when you will use a real Pro Account
+    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+        login: "gabrielv14-facilitator_api1.gmail.com",
+        password: "DGE8R5NDADGCN66M",
+        signature: "An5ns1Kso7MWUdW4ErQKJJJ4qi4-Aodv5f6jvQWrwtPc5DYqtrypKjIN"
+    )
+  end
   # Send email in development mode?
   config.action_mailer.perform_deliveries = true
 end
