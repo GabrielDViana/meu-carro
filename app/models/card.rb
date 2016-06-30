@@ -28,15 +28,7 @@ class Card < ActiveRecord::Base
 
   def purchase_options
     values = {
-            ip: ip_address,
-            billing_address: {
-                name:      "Flaying Cakes",
-                address1:  "123 5th Av.",
-                city:      "New York",
-                state:     "NY",
-                country:   "US",
-                zip:       "10001"
-            }
+            ip: ip_address
         }
     if course.recurring
       values.merge(

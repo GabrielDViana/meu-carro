@@ -3,7 +3,7 @@
   <ul class="course-nav-list"></ul>
   <% @courses.each do |course| %>
   <li class="<%= 'active' if params['course_id'].to_i== course.id %>">
-    <%= link_to new_user_registration_path(course_id: course.id, user_token:@user.token), class: "ruby" do %>
+    <%= link_to new_registration_path(course_id: course.id, user_token:@user.token), class: "ruby" do %>
     <div class="course-name">
       <%= course.name %>
     </div>

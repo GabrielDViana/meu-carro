@@ -20,7 +20,9 @@ class RegistrationsController < ApplicationController
   # POST /registrations
   def create
     @registration = Registration.new(registration_params)
-    @registration.card.ip_address = request.remote_ip
+    if @registration.card
+      @registration.card.ip_address = request.remote_ip
+    end
     if @registration.save
       case params['payment_method']
         when "paypal"
